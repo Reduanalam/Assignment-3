@@ -1,11 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3</title>
+  <!-- DaisiUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- font Awesome -->
+  <script src="https://kit.fontawesome.com/37081f6608.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+  <header class="border md:h-[1193px] w-full bg-gradient-to-b from-white to-[#EFEBE3]">
+
+    <nav class="flex justify-between mt-8 items-center">
+      <!-- Nav logo (Always Visible) -->
+      <div class="md:ml-28">
+        <img src="images/logo-header.png" alt="">
+      </div>
+
+      <!-- Nav product (Hidden on Mobile) -->
+      <div class="hidden md:block">
+        <ul class="flex gap-4">
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Nav button & icons (Hidden on Mobile) -->
+      <div class="hidden md:flex mr-28 gap-x-4">
+        <svg width="24.019653" height="24.019722" viewBox="0 0 24.0197 24.0197" fill="none"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <desc>
+            Created with Pixso.
+          </desc>
+          <defs />
+          <path id="Vector"
+            d="M23.73 22.32L17.77 16.35C19.39 14.36 20.19 11.82 20 9.26C19.81 6.7 18.64 4.31 16.73 2.58C14.83 0.86 12.33 -0.07 9.76 0C7.19 0.06 4.75 1.11 2.93 2.93C1.11 4.75 0.06 7.19 0 9.76C-0.07 12.33 0.86 14.83 2.58 16.73C4.31 18.64 6.7 19.81 9.26 20C11.82 20.19 14.36 19.39 16.35 17.77L22.32 23.73C22.51 23.92 22.76 24.02 23.02 24.01C23.29 24.01 23.54 23.91 23.72 23.72C23.91 23.54 24.01 23.29 24.01 23.02C24.02 22.76 23.92 22.51 23.73 22.32ZM10.03 18.03C8.44 18.03 6.9 17.56 5.58 16.68C4.27 15.8 3.24 14.55 2.64 13.09C2.03 11.63 1.87 10.02 2.18 8.47C2.49 6.91 3.25 5.49 4.37 4.37C5.49 3.25 6.91 2.49 8.47 2.18C10.02 1.87 11.63 2.03 13.09 2.64C14.55 3.24 15.8 4.27 16.68 5.58C17.56 6.9 18.03 8.44 18.03 10.03C18.02 12.15 17.18 14.18 15.68 15.68C14.18 17.18 12.15 18.02 10.03 18.03Z"
+            fill="#000000" fill-opacity="1.000000" fill-rule="nonzero" />
+        </svg>
+
+
+        <svg width="20.925537" height="13.227276" viewBox="0 0 20.9255 13.2273" fill="none"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <desc>
+            Created with Pixso.
+          </desc>
+          <defs />
+          <path id="Vector"
+            d="M1.73 8.9C0.74 9.11 0 9.99 0 11.04C0 12.25 0.97 13.22 2.18 13.22C3.24 13.22 4.13 12.46 4.32 11.45C4.35 11.32 4.36 11.18 4.36 11.04C4.36 10.8 4.32 10.57 4.25 10.36C4.2 10.22 4.14 10.08 4.07 9.95L14.44 9.95C14.37 10.08 14.31 10.22 14.26 10.36C14.19 10.57 14.15 10.8 14.15 11.04C14.15 11.18 14.16 11.32 14.19 11.45C14.38 12.46 15.27 13.22 16.33 13.22C17.4 13.22 18.28 12.46 18.48 11.45C18.5 11.32 18.51 11.18 18.51 11.04C18.51 10.8 18.48 10.57 18.41 10.36C18.36 10.22 18.3 10.08 18.22 9.95L19.28 9.95C19.48 9.95 19.66 9.92 19.82 9.86C20.97 9.47 21.36 7.87 20.29 7.03L18.81 5.86L18.65 5.73C18.58 5.67 18.49 5.63 18.39 5.62L17.35 5.48L17.49 5.09L17.88 4.04L18.81 1.5L19.36 0L5.99 0C5.27 0 4.74 0.69 4.94 1.39L6 5.02L15.45 6.32L16.52 6.47C16.53 6.47 16.54 6.47 16.54 6.47L18.09 6.68L18.95 7.36L19 7.4L19.62 7.89C20.03 8.21 19.8 8.86 19.28 8.86L2.18 8.86C2.02 8.86 1.87 8.87 1.73 8.9ZM15.94 10.36L16.73 10.36L16.92 10.7Q16.96 10.77 16.99 10.84Q17.01 10.94 17.01 11.04Q17.01 11.18 16.96 11.3Q16.91 11.42 16.81 11.52Q16.71 11.62 16.59 11.67Q16.47 11.72 16.33 11.72Q16.19 11.72 16.07 11.67Q15.95 11.62 15.85 11.52Q15.75 11.42 15.7 11.3Q15.65 11.18 15.65 11.04Q15.65 10.94 15.68 10.84Q15.7 10.77 15.74 10.7L15.94 10.36ZM15.97 4.88L17.21 1.5L6.54 1.5L7.17 3.67L15.97 4.88ZM2.57 10.36L2.18 10.36Q2.04 10.36 1.92 10.41Q1.79 10.46 1.69 10.56Q1.59 10.66 1.54 10.78Q1.5 10.9 1.5 11.04Q1.5 11.18 1.54 11.3Q1.59 11.42 1.69 11.52Q1.79 11.62 1.92 11.67Q2.04 11.72 2.18 11.72Q2.32 11.72 2.44 11.67Q2.56 11.62 2.66 11.52Q2.76 11.42 2.81 11.3Q2.86 11.18 2.86 11.04Q2.86 10.94 2.83 10.84Q2.81 10.77 2.77 10.7L2.57 10.36Z"
+            fill="#111111" fill-opacity="1.000000" fill-rule="evenodd" />
+        </svg>
+        <button class="btn btn-outline">Login</button>
+        <button class="btn btn-success">Register</button>
+      </div>
+
+      <!-- menu for mobile -->
+      <div class="md:hidden text-2xl cursor-pointer mr-10" id="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+
+    <!-- hero section -->
+    <!-- Main text -->
+    <div class="mt-32 ">
+      <div class="text-center font-bold text-6xl">
+        <h1>
+          Freshness <span class="text-green-600">You Can</span>
+        </h1>
+        <h1>
+          <span class="text-green-600">Count On</span>, Prices You’ll Love!
+        </h1>
+      </div>
+      </h1>
+      <div class="text-center text-gray-800 text-2xl mt-8">
+        <p>Shop your daily essentials at unbeatable prices.From fresh produce to pantry</p>
+        <p>staples, we’ve got you covered every day!</p>
+      </div>
+    </div>
+    <!-- Main image -->
+    <div class="md:h-[838px] md:w-[931px] w-[493px] h-[400px] md:mx-64 md:ml-48 ml-0 ">
+      <img src="images/hero-vegetables.png" alt="">
+    </div>
+
+  </header>
+  <!-- md:flex -->
+  <main>
+    <h1 class="text-2xl md:ml-36 mb-12 font-bold text-green-600 mt-16">Services</h1>
+    <div class="md:flex md:mx-36  gap-6  ">
+      <!-- card 1 -->
+      <div class="border rounded-xl  mb-6 text-center bg-[#EFEBE3] md:h-[367px] md:w-[424px] px-5 py-5">
+        <div class="ml-20 w-36 bg-white rounded-full p-4 flex items-center justify-center"><img src="images/service.png"
+            alt=""></div>
+        <div>
+          <h4 class="text-2xl mb-3 mt-6">24/7 Services </h4>
+          <p class="text-xl">Our 24/7 delivery service ensures that your orders reach you quickly and reliably, day or
+            night.</p>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="border rounded-xl  mb-6 text-center bg-[#EFEBE3] md:h-[367px] md:w-[424px] px-5 py-5">
+        <div class="ml-20 w-36 bg-white rounded-full p-4 flex items-center justify-center"><img
+            src="images/delivery.png" alt=""></div>
+        <div>
+          <h4 class="text-2xl mb-3 mt-6">Fast Delivery</h4>
+          <p class="text-xl">Get your orders delivered quickly and efficiently with our lightning-fast delivery service!
+          </p>
+        </div>
+      </div>
+      <!-- card 3 -->
+      <div class="border rounded-xl  mb-6 text-center bg-[#EFEBE3] md:h-[367px] md:w-[424px] px-5 py-5">
+        <div class="ml-20 w-36 bg-white rounded-full p-4 flex items-center justify-center"><img src="images/healthy.png"
+            alt=""></div>
+        <div>
+          <h4 class="text-2xl mb-3 mt-6">Healthy Products </h4>
+          <p class="text-xl">Discover a range of premium, natural, and wholesome products designed to support your
+            health and well-being</p>
+        </div>
+      </div>
+
+    </div>
+
+
+ 
+<!-- Popular product -->
+<div class="border border-rose-100 md:h-[650px] h-[890px] w-full max-w-[1250px]   bg-[#EFEBE3] md:flex flex-wrap justify-center items-center  px-6 py-6">
+
+  <!-- Title -->
+  <h1 class="text-2xl font-bold text-green-600 w-full   md:ml-32 ">Popular Products</h1>
+
+  <!-- Product Card -->
+  <div class="relative md:w-[300px] h-[300px] mt-[33px] rounded-lg mb-14 mr-6 bg-gradient-to-b to-lime-200 from-lime-500 p-6 text-white flex flex-col justify-between">
+    <div>
+      <h2 class="text-2xl font-bold mb-2">30% off</h2>
+      <p class="text-sm mb-4 text-black">
+        Discover a world of treats, toys, and <br />
+        essentials handpicked for you.
+      </p>
+      <button class="px-4 py-2 bg-white text-green-500 font-semibold rounded-lg shadow-md hover:bg-gray-100">
+        Buy Now
+      </button>
+    </div>
+    <div class="absolute bottom-0 right-4 w-[210px] h-auto">
+      <img src="images/vegetable-offer.png" alt="Produce" class="object-contain" />
+    </div>
+  </div>
+
+  <!-- Grid Section -->
+  <div class="grid md:grid-cols-3 grid-cols-2 gap-x-6 gap-y-2">
+    <!-- Product Cards inside Grid -->
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px]">
+      <img src="images/onion.PNG" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">Onion 1 KG</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+
     
+    <!-- Repeat for other items -->
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px] ">
+      <img src="images/tomato.PNG" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">Tamato 500 g</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+    
+
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px]">
+      <img src="images/potato.PNG" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">potato 1 KG</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px]">
+      <img src="images/tomato.png" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">Tamato 500 g</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px]">
+      <img src="images/onion.png" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">Onion 1 KG</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px]">
+      <img src="images/tomato.PNG" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">Tamato 500 g</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px]">
+      <img src="images/onion.png" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">Onion 1 KG</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px]">
+      <img src="images/potato.PNG" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">potato 1 KG</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px]">
+      <img src="images/potato.PNG" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">potato 1 KG</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+    <div class="bg-white p-2 rounded-lg shadow-md flex items-center gap-3 w-[184px] h-[79px] md:hidden">
+      <img src="images/onion.PNG" alt="Onion" class="w-12 h-12 rounded-md bg-[#EFEBE3]">
+      <div>
+        <div class="flex items-center gap-1 text-yellow-500 text-sm">
+          <span>★</span>
+          <span class="text-gray-700 font-medium">4.5</span>
+        </div>
+        <h4 class="text-sm font-bold text-gray-900">Onion 1 KG</h4>
+        <p class="text-sm font-bold text-gray-700">$39.99</p>
+      </div>
+    </div>
+
+    <!-- Add all remaining product cards here -->
+  </div>
+</div>
+
+
+ 
+
+
+
+
+
+    <!--  -->
+
+  </main>
+  <h1 class="text-2xl md:ml-36 mb-12 font-bold text-green-600 mt-16">Arrival & Offers</h1>
+  <div class=" md:flex gap-3 ">
+    <!-- card 1 -->
+    <div class=" flex md:w-[580px] w-[480px] h-[240px] bg-[#115414] md:ml-36 rounded-xl mb-9">
+      <div class="ml-10">
+        <img class="mt-7 " src="images/dawat-logo.png" alt="">
+        <button class="btn btn-success w-56 mt-6">Cook Exotic Dishes</button>
+        <p class="text-3xl mt-6 text-white">UP to 20% OFF</p>
+      </div>
+      <div>
+        <img class="h-[200px] mt-8 ml-10" src="images/dawat-mock-up.png" alt="">
+      </div>
+    </div>
+    <!-- card 2 -->
+    <div class="flex md:w-[438px] w-[480px] h-[240px] bg-[#102861] mr-36 rounded-xl mb-9 justify-around">
+      <div class="ml-10">
+        <img class="mt-7 h-16 w-14 " src="images/india-gate-logo.png" alt="">
+        <button class="btn btn-success   mt-6 bg-[#2A4D97]">World’s No.1 Rice</button>
+        <p class="text-2xl mt-6 text-white">UP to 40% OFF</p>
+      </div>
+      <div>
+        <img class="h-[200px] mt-8 ml-12" src="images/india-gate-mock-up.png" alt="">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- extra section -->
+  <div class="text-center">
+    <div class="hero bg-base-200 min-h-screen">
+      <div class="hero-content flex-col lg:flex-row-reverse">
+        <div class="text-center lg:text-left">
+          <h1 class="text-5xl font-bold">Login now!</h1>
+          <p class="py-6 text-xl">
+            Log in to your account to enjoy seamless access to your dashboard, orders, and exclusive features. Stay
+            connected, manage your preferences, and experience a hassle-free user journey.
+          </p>
+        </div>
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <form class="card-body">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Email</span>
+              </label>
+              <input type="email" placeholder="email" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Password</span>
+              </label>
+              <input type="password" placeholder="password" class="input input-bordered" required />
+              <label class="label">
+                <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+              </label>
+            </div>
+            <div class="form-control mt-6">
+              <button class="btn btn-primary">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- extra section 2 -->
+  <div class="md:w-[1100px] md:h-[350px]    bg-slate-400 md:ml-24  md:flex  absolute translate-y-3.5 md:translate-y-56">
+    <div><img src="images/vegetable-busket.png" alt=""></div>
+    <div class="ml-28">
+      <h1 class="text-5xl mb-5 mt-16">Get Grocery News!</h1>
+      <p class="text-xl mb-9"> Exclusive training tips, ticks, product deals and more.</p>
+      <input type="text" placeholder="Enter email...." class=" mb-5 input input-bordered w-full max-w-xs"
+        disabled /><br>
+      <button class="btn btn-success bg-[#476d41] w-24 h-11 text-white mb-6">Subscribe</button>
+    </div>
+  </div>
+
+
+  <footer>
+     
+    <div class="md:w-full md:h-[558px] w-full h-[959px] bg-[#179800]  mt-[350px] md:flex pl-20 pt-4 md:pt-64 justify-around">
+      <div class="mt-12">
+        <img class="bg-white bg-cover bg-center text-white" src="images/logo-header.png" alt="">
+        <p class="text-xl text-[#FFFFFFB3]">Discover a world of treats, toys, and <br>
+          essentials handpicked for your furry <br>
+          friends</p>
+      </div>
+      <div>
+        <div class="pt-11">
+          <ul>
+            <li class="mb-6 text-white">
+              <link rel="stylesheet" href=" ">product
+            </li>
+            <li class="mb-6 text-white">
+              <link rel="stylesheet" href="">Services
+            </li>
+            <li class="text-white">
+              <link rel="stylesheet" href="">Contact us
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-20 text-white   ">
+        <p>Follow Us</p>
+        <div class="flex gap-4">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-youtube"></i>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>  
+
+ 
 </body>
+
 </html>
+
+
+
+
+
+
+
+<!-- <nav class="flex justify-between mt-8 "> -->
+<!-- Nav logo -->
+<!-- <div class="ml-28"><img src="images/logo-header.png" alt=""></div>      -->
+<!-- Nav product  -->
+
+<!-- <div class=" ">
+      <ul class="flex gap-4">
+        <li>
+          <link rel="stylesheet" href=" ">product
+        </li>
+        <li>
+          <link rel="stylesheet" href="">Services
+        </li>
+        <li>
+          <link rel="stylesheet" href="">Contact us
+        </li>
+
+      </ul>
+
+    </div>
+     Nav button - 
+    <div class="mr-28 flex gap-x-4">
+      <svg width="24.019653" height="24.019722" viewBox="0 0 24.0197 24.0197" fill="none"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <desc>
+          Created with Pixso.
+        </desc>
+        <defs />
+        <path id="Vector"
+          d="M23.73 22.32L17.77 16.35C19.39 14.36 20.19 11.82 20 9.26C19.81 6.7 18.64 4.31 16.73 2.58C14.83 0.86 12.33 -0.07 9.76 0C7.19 0.06 4.75 1.11 2.93 2.93C1.11 4.75 0.06 7.19 0 9.76C-0.07 12.33 0.86 14.83 2.58 16.73C4.31 18.64 6.7 19.81 9.26 20C11.82 20.19 14.36 19.39 16.35 17.77L22.32 23.73C22.51 23.92 22.76 24.02 23.02 24.01C23.29 24.01 23.54 23.91 23.72 23.72C23.91 23.54 24.01 23.29 24.01 23.02C24.02 22.76 23.92 22.51 23.73 22.32ZM10.03 18.03C8.44 18.03 6.9 17.56 5.58 16.68C4.27 15.8 3.24 14.55 2.64 13.09C2.03 11.63 1.87 10.02 2.18 8.47C2.49 6.91 3.25 5.49 4.37 4.37C5.49 3.25 6.91 2.49 8.47 2.18C10.02 1.87 11.63 2.03 13.09 2.64C14.55 3.24 15.8 4.27 16.68 5.58C17.56 6.9 18.03 8.44 18.03 10.03C18.02 12.15 17.18 14.18 15.68 15.68C14.18 17.18 12.15 18.02 10.03 18.03Z"
+          fill="#000000" fill-opacity="1.000000" fill-rule="nonzero" />
+      </svg>
+
+
+      <svg width="20.925537" height="13.227276" viewBox="0 0 20.9255 13.2273" fill="none"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <desc>
+          Created with Pixso.
+        </desc>
+        <defs />
+        <path id="Vector"
+          d="M1.73 8.9C0.74 9.11 0 9.99 0 11.04C0 12.25 0.97 13.22 2.18 13.22C3.24 13.22 4.13 12.46 4.32 11.45C4.35 11.32 4.36 11.18 4.36 11.04C4.36 10.8 4.32 10.57 4.25 10.36C4.2 10.22 4.14 10.08 4.07 9.95L14.44 9.95C14.37 10.08 14.31 10.22 14.26 10.36C14.19 10.57 14.15 10.8 14.15 11.04C14.15 11.18 14.16 11.32 14.19 11.45C14.38 12.46 15.27 13.22 16.33 13.22C17.4 13.22 18.28 12.46 18.48 11.45C18.5 11.32 18.51 11.18 18.51 11.04C18.51 10.8 18.48 10.57 18.41 10.36C18.36 10.22 18.3 10.08 18.22 9.95L19.28 9.95C19.48 9.95 19.66 9.92 19.82 9.86C20.97 9.47 21.36 7.87 20.29 7.03L18.81 5.86L18.65 5.73C18.58 5.67 18.49 5.63 18.39 5.62L17.35 5.48L17.49 5.09L17.88 4.04L18.81 1.5L19.36 0L5.99 0C5.27 0 4.74 0.69 4.94 1.39L6 5.02L15.45 6.32L16.52 6.47C16.53 6.47 16.54 6.47 16.54 6.47L18.09 6.68L18.95 7.36L19 7.4L19.62 7.89C20.03 8.21 19.8 8.86 19.28 8.86L2.18 8.86C2.02 8.86 1.87 8.87 1.73 8.9ZM15.94 10.36L16.73 10.36L16.92 10.7Q16.96 10.77 16.99 10.84Q17.01 10.94 17.01 11.04Q17.01 11.18 16.96 11.3Q16.91 11.42 16.81 11.52Q16.71 11.62 16.59 11.67Q16.47 11.72 16.33 11.72Q16.19 11.72 16.07 11.67Q15.95 11.62 15.85 11.52Q15.75 11.42 15.7 11.3Q15.65 11.18 15.65 11.04Q15.65 10.94 15.68 10.84Q15.7 10.77 15.74 10.7L15.94 10.36ZM15.97 4.88L17.21 1.5L6.54 1.5L7.17 3.67L15.97 4.88ZM2.57 10.36L2.18 10.36Q2.04 10.36 1.92 10.41Q1.79 10.46 1.69 10.56Q1.59 10.66 1.54 10.78Q1.5 10.9 1.5 11.04Q1.5 11.18 1.54 11.3Q1.59 11.42 1.69 11.52Q1.79 11.62 1.92 11.67Q2.04 11.72 2.18 11.72Q2.32 11.72 2.44 11.67Q2.56 11.62 2.66 11.52Q2.76 11.42 2.81 11.3Q2.86 11.18 2.86 11.04Q2.86 10.94 2.83 10.84Q2.81 10.77 2.77 10.7L2.57 10.36Z"
+          fill="#111111" fill-opacity="1.000000" fill-rule="evenodd" />
+      </svg>
+
+      <button class="btn btn-outline ">Login</button>
+      <button class="btn btn-success">Register</button>
+    </div>
+  
+
+  <i class="fa-solid fa-bars mr-8 w-9 h-4"></i>
+</nav> -->
